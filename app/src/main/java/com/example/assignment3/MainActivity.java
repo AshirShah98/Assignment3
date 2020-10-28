@@ -39,47 +39,45 @@ public class MainActivity extends AppCompatActivity {
         checkBox4 = findViewById(R.id.cb4);
 
         button = findViewById(R.id.button);
-    }
-
-    public void ONClickFn(View view)
-    {
-        int check1 = radioGroup1.getCheckedRadioButtonId();
-        int check2 = radioGroup2.getCheckedRadioButtonId();
-
-        radioButton1 = findViewById(check1);
-        radioButton2 = findViewById(check2);
-
-        str = radioButton1.getText().toString().concat(" & ").concat(radioButton2.getText().toString());
-
-        if(checkBox1.isChecked())
-        {
-            str = str.concat(" & ").concat(checkBox1.getText().toString());
-        }
-
-        if(checkBox2.isChecked())
-        {
-            str = str.concat(" & ").concat(checkBox2.getText().toString());
-        }
-
-        if(checkBox3.isChecked())
-        {
-            str = str.concat(" & ").concat(checkBox3.getText().toString());
-        }
-
-        if(checkBox4.isChecked())
-        {
-            str = str.concat(" & ").concat(checkBox4.getText().toString());
-        }
-
-        str = str.concat(" pressed...");
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int check1 = radioGroup1.getCheckedRadioButtonId();
+                int check2 = radioGroup2.getCheckedRadioButtonId();
+
+                radioButton1 = findViewById(check1);
+                radioButton2 = findViewById(check2);
+
+                str = radioButton1.getText().toString().concat(" & ").concat(radioButton2.getText().toString());
+
+                if(checkBox1.isChecked())
+                {
+                    str = str.concat(" & ").concat(checkBox1.getText().toString());
+                }
+
+                if(checkBox2.isChecked())
+                {
+                    str = str.concat(" & ").concat(checkBox2.getText().toString());
+                }
+
+                if(checkBox3.isChecked())
+                {
+                    str = str.concat(" & ").concat(checkBox3.getText().toString());
+                }
+
+                if(checkBox4.isChecked())
+                {
+                    str = str.concat(" & ").concat(checkBox4.getText().toString());
+                }
+
+                str = str.concat(" pressed...");
+
                 Intent intent = new Intent(MainActivity.this , assignment3_2.class);
                 intent.putExtra("data" , str);
                 startActivity(intent);
             }
         });
     }
+
 }
